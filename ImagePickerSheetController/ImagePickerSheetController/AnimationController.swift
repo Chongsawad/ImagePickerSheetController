@@ -23,9 +23,11 @@ class AnimationController: NSObject {
     // MARK: - Animation
     
     private func animatePresentation(context: UIViewControllerContextTransitioning) {
-        guard let containerView = context.containerView() else {
+        let containerView: UIView! = context.containerView()
+        guard containerView != nil else {
             return
         }
+        
         
         containerView.addSubview(imagePickerSheetController.view)
         
@@ -42,7 +44,8 @@ class AnimationController: NSObject {
     }
     
     private func animateDismissal(context: UIViewControllerContextTransitioning) {
-        guard let containerView = context.containerView() else {
+        let containerView: UIView! = context.containerView()
+        guard containerView != nil else {
             return
         }
         
